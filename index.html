@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javi & Manuel · Nuestra boda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rosa-claro: #fdeef2;
+    --rosa: #f8c8d4;
+    --rosa-medio: #ec9bb0;
+    --rosa-fuerte: #d9728f;
+    --rosa-oscuro: #a94a66;
+    --crema: #fffaf6;
+    --texto: #5a3a44;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--texto);
+    background: var(--rosa-claro);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ---------- PORTADA ---------- */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+      radial-gradient(circle at 20% 15%, #fff 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, var(--rosa) 0%, transparent 45%),
+      linear-gradient(160deg, var(--rosa-claro), var(--rosa));
+    position: relative;
+  }
+  .marco {
+    border: 1px solid var(--rosa-medio);
+    outline: 1px solid var(--rosa-medio);
+    outline-offset: 8px;
+    padding: 60px 30px;
+    max-width: 560px;
+    width: 100%;
+    background: rgba(255, 255, 255, .55);
+    backdrop-filter: blur(3px);
+  }
+  .pretitulo {
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    font-size: .75rem;
+    color: var(--rosa-oscuro);
+    margin-bottom: 20px;
+  }
+  .nombres {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3.2rem, 14vw, 5.5rem);
+    color: var(--rosa-fuerte);
+    line-height: 1.1;
+    font-weight: 400;
+  }
+  .nombres .y {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--rosa-medio);
+    margin: 4px 0;
+  }
+  .fecha {
+    margin-top: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    letter-spacing: .15em;
+    color: var(--rosa-oscuro);
+  }
+  .frase {
+    margin-top: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+  .flecha {
+    position: absolute;
+    bottom: 22px;
+    font-size: 1.6rem;
+    color: var(--rosa-fuerte);
+    animation: rebote 2s infinite;
+    text-decoration: none;
+  }
+  @keyframes rebote {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* ---------- SECCIONES ---------- */
+  section { padding: 80px 20px; text-align: center; }
+  .contenedor { max-width: 760px; margin: 0 auto; }
+  h2 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 3rem;
+    color: var(--rosa-fuerte);
+    margin-bottom: 10px;
+  }
+  .adorno {
+    color: var(--rosa-medio);
+    letter-spacing: .6em;
+    margin-bottom: 30px;
+  }
+
+  /* Cuenta atrás */
+  .cuenta { background: var(--crema); }
+  .contador {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .caja {
+    background: var(--rosa-claro);
+    border: 1px solid var(--rosa);
+    border-radius: 14px;
+    padding: 18px 14px;
+    min-width: 78px;
+  }
+  .caja b {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    color: var(--rosa-fuerte);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .caja span {
+    font-size: .7rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+
+  /* Detalles */
+  .tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+  }
+  .tarjeta {
+    background: #fff;
+    border-radius: 18px;
+    padding: 34px 24px;
+    box-shadow: 0 10px 30px rgba(217, 114, 143, .15);
+    border-top: 4px solid var(--rosa-medio);
+  }
+  .tarjeta .icono { font-size: 2.2rem; }
+  .tarjeta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--rosa-oscuro);
+    margin: 8px 0;
+  }
+  .hora {
+    display: inline-block;
+    margin: 6px 0;
+    padding: 2px 14px;
+    border-radius: 20px;
+    background: var(--rosa);
+    color: var(--rosa-oscuro);
+    font-weight: 500;
+    font-size: .9rem;
+  }
+  .btn-mapa {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: .8rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--rosa-fuerte);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rosa-fuerte);
+  }
+
+  /* Dress code / info */
+  .info { background: var(--crema); }
+  .info p { max-width: 540px; margin: 0 auto 14px; }
+
+  /* RSVP */
+  .rsvp {
+    background: linear-gradient(180deg, var(--rosa-claro), var(--rosa));
+  }
+  form {
+    background: #fff;
+    max-width: 520px;
+    margin: 30px auto 0;
+    padding: 34px 26px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(217, 114, 143, .2);
+    text-align: left;
+  }
+  label {
+    display: block;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin: 16px 0 6px;
+    color: var(--rosa-oscuro);
+  }
+  input[type=text], input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--rosa);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--crema);
+    color: var(--texto);
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--rosa-medio);
+    border-color: transparent;
+  }
+  textarea { min-height: 80px; resize: vertical; }
+  .boton {
+    display: block;
+    width: 100%;
+    margin-top: 26px;
+    padding: 15px;
+    border: none;
+    border-radius: 40px;
+    background: var(--rosa-fuerte);
+    color: #fff;
+    font-family: inherit;
+    font-size: .95rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s, transform .25s;
+    text-align: center;
+    text-decoration: none;
+  }
+  .boton:hover { background: var(--rosa-oscuro); transform: translateY(-2px); }
+  .gracias {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--rosa-oscuro);
+  }
+  .nota-prueba {
+    max-width: 520px;
+    margin: 16px auto 0;
+    font-size: .75rem;
+    opacity: .7;
+  }
+
+  footer {
+    padding: 50px 20px;
+    text-align: center;
+    background: var(--rosa-oscuro);
+    color: #fff;
+  }
+  footer .firma {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+  }
+  footer small { opacity: .8; letter-spacing: .15em; }
+
+  /* Pétalos */
+  .petalo {
+    position: fixed;
+    top: -30px;
+    width: 14px;
+    height: 14px;
+    background: var(--rosa-medio);
+    border-radius: 80% 0 80% 0;
+    opacity: .55;
+    pointer-events: none;
+    animation: caer linear forwards;
+    z-index: 5;
+  }
+  @keyframes caer {
+    to { transform: translateY(110vh) rotate(540deg); }
+  }
+
+  /* Aparición suave */
+  .aparece { opacity: 0; transform: translateY(30px); transition: all .9s ease; }
+  .aparece.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<header class="portada">
+  <div class="marco">
+    <p class="pretitulo">¡Nos casamos!</p>
+    <h1 class="nombres">Javi <span class="y">&</span> Manuel</h1>
+    <p class="fecha">12 · 09 · 2027</p>
+    <p class="frase">Y queremos celebrarlo contigo</p>
+  </div>
+  <a class="flecha" href="#cuenta" aria-label="Bajar">&#8964;</a>
+</header>
+
+<!-- CUENTA ATRÁS -->
+<section class="cuenta" id="cuenta">
+  <div class="contenedor aparece">
+    <h2>Falta muy poco</h2>
+    <p class="adorno">♥ ♥ ♥</p>
+    <div class="contador">
+      <div class="caja"><b id="dias">0</b><span>Días</span></div>
+      <div class="caja"><b id="horas">0</b><span>Horas</span></div>
+      <div class="caja"><b id="minutos">0</b><span>Min</span></div>
+      <div class="caja"><b id="segundos">0</b><span>Seg</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRA HISTORIA -->
+<section class="info">
+  <div class="contenedor aparece">
+    <h2>Nuestra historia</h2>
+    <p class="adorno">♥ ♥ ♥</p>
+    <p>Nos conocimos en el verano de 2017, en una terraza, entre risas y un pedido equivocado de croquetas.</p>
+    <p>Desde entonces hemos compartido viajes, mudanzas, una gata llamada Pepita y muchísimos domingos de sofá.</p>
+    <p>En mayo de 2026, Manuel preparó una cena sorpresa en casa y Javi dijo que sí antes de que terminara la pregunta.</p>
+    <p><em>Ahora solo falta que vengas a celebrarlo con nosotros.</em></p>
+  </div>
+</section>
+
+<!-- DETALLES -->
+<section id="detalles">
+  <div class="contenedor aparece">
+    <h2>El gran día</h2>
+    <p class="adorno">♥ ♥ ♥</p>
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <div class="icono">💒</div>
+        <h3>Ceremonia</h3>
+        <span class="hora">18:00 h</span>
+        <p>Ermita de Nuestra Señora de las Rosas<br>Calle de la Ermita, 1</p>
+        <a class="btn-mapa" href="https://www.google.com/maps/search/?api=1&query=Ermita+de+Nuestra+Se%C3%B1ora+de+las+Rosas" target="_blank" rel="noopener">Ver mapa</a>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">🥂</div>
+        <h3>Banquete</h3>
+        <span class="hora">20:00 h</span>
+        <p>Finca Los Almendros<br>Camino de los Almendros, km 3</p>
+        <a class="btn-mapa" href="https://www.google.com/maps/search/?api=1&query=Finca+Los+Almendros" target="_blank" rel="noopener">Ver mapa</a>
+      </div>
+      <div class="tarjeta">
+        <div class="icono">💃</div>
+        <h3>Fiesta</h3>
+        <span class="hora">23:30 h</span>
+        <p>Barra libre, DJ y mesa dulce en los jardines de la finca.<br>¡A bailar hasta que el cuerpo aguante!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info">
+  <div class="contenedor aparece">
+    <h2>Un par de cosas</h2>
+    <p class="adorno">♥ ♥ ♥</p>
+    <p><strong>Dress code:</strong> elegante. Si te animas, un toque de rosa será bienvenido. Evita el blanco, que es el color de los novios (de uno de ellos, al menos).</p>
+    <p><strong>Autobús:</strong> habrá servicio gratuito desde la ceremonia hasta la finca a las 19:15 h, y de vuelta a las 02:00 h y a las 04:00 h.</p>
+    <p><strong>Aparcamiento:</strong> la finca tiene parking gratuito para los invitados.</p>
+    <p><strong>Niños:</strong> son bienvenidos y habrá menú infantil y una zona de juegos con monitores.</p>
+    <p><strong>Regalo:</strong> vuestra presencia es lo mejor. Si queréis tener un detalle, podéis hacer una aportación a nuestra luna de miel:<br><em>ES00 0000 0000 0000 0000 0000 (cuenta de ejemplo)</em></p>
+  </div>
+</section>
+
+<!-- CONFIRMACIÓN -->
+<section class="rsvp" id="confirmar">
+  <div class="contenedor aparece">
+    <h2>¿Vienes?</h2>
+    <p class="adorno">♥ ♥ ♥</p>
+    <p>Confírmanos tu asistencia antes del 1 de agosto de 2027</p>
+
+    <form id="formulario">
+      <label for="nombre">Nombre y apellidos</label>
+      <input type="text" id="nombre" required>
+
+      <label for="asistencia">¿Asistirás?</label>
+      <select id="asistencia" required>
+        <option value="">Elige una opción</option>
+        <option>¡Sí, allí estaré!</option>
+        <option>No podré ir</option>
+      </select>
+
+      <label for="acompanantes">Número de acompañantes</label>
+      <input type="number" id="acompanantes" min="0" max="5" value="0">
+
+      <label for="menu">Menú</label>
+      <select id="menu">
+        <option>Menú normal</option>
+        <option>Vegetariano</option>
+        <option>Infantil</option>
+      </select>
+
+      <label for="alergias">Alergias o intolerancias</label>
+      <textarea id="alergias" placeholder="Cuéntanos si hay algo que debamos saber"></textarea>
+
+      <button type="submit" class="boton">Confirmar asistencia</button>
+      <p class="gracias" id="gracias">¡Gracias! Nos hace mucha ilusión que vengas 💗</p>
+    </form>
+
+    <p class="nota-prueba">
+      Versión de prueba: este formulario es solo de muestra y no guarda datos.
+      En la versión final se sustituye por un formulario real (por ejemplo, Tally).
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p class="firma">Javi & Manuel</p>
+  <small>12 · 09 · 2027</small>
+  <p style="margin-top:20px;font-size:.85rem;">
+    ¿Dudas? Escríbenos:<br>
+    Javi: 600 000 001 · Manuel: 600 000 002<br>
+    javiymanuel@ejemplo.com
+  </p>
+</footer>
+
+<script>
+  // Cuenta atrás (cambia la fecha y la hora de la boda aquí)
+  const fechaBoda = new Date('2027-09-12T18:00:00').getTime();
+  function actualizar() {
+    let resto = fechaBoda - Date.now();
+    if (resto < 0) resto = 0;
+    document.getElementById('dias').textContent = Math.floor(resto / 86400000);
+    document.getElementById('horas').textContent = Math.floor(resto % 86400000 / 3600000);
+    document.getElementById('minutos').textContent = Math.floor(resto % 3600000 / 60000);
+    document.getElementById('segundos').textContent = Math.floor(resto % 60000 / 1000);
+  }
+  actualizar();
+  setInterval(actualizar, 1000);
+
+  // Aparición al hacer scroll
+  const observador = new IntersectionObserver(entradas => {
+    entradas.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: .15 });
+  document.querySelectorAll('.aparece').forEach(el => observador.observe(el));
+
+  // Pétalos cayendo
+  function crearPetalo() {
+    const p = document.createElement('div');
+    p.className = 'petalo';
+    p.style.left = Math.random() * 100 + 'vw';
+    const tam = 8 + Math.random() * 14;
+    p.style.width = p.style.height = tam + 'px';
+    p.style.animationDuration = 7 + Math.random() * 6 + 's';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 13000);
+  }
+  setInterval(crearPetalo, 900);
+
+  // Formulario de muestra
+  document.getElementById('formulario').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('gracias').style.display = 'block';
+  });
+</script>
+</body>
+</html>
